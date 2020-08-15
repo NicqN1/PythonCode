@@ -1,5 +1,4 @@
 import random
-glossary = ["Analyse", "Calculate", "Discuss", "Identify", "Predict"]
-meme = ["Abstraction", "Decomposition", "Stepwise Refinement", "Structered English"]
-print("1. Explain what",random.choice(glossary),"means")
-print("2. Define:",random.choice(meme))
+meme = ["Abstraction", "Decomposition", "Stepwise Refinement", "Discuss", "Identify"]
+question = ["Explain", "Define", "State the meaning of", "Outline"]
+print(random.choice(question),random.choice(meme))
