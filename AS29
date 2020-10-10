@@ -1,0 +1,12 @@
+SELECT name FROM world
+  WHERE name LIKE 'Y%'
+  
+SELECT name FROM world
+  WHERE name LIKE '%l' '%a' '%n' '%d'
+  
+SELECT name FROM world
+  WHERE name LIKE '%oo%'
+  
+SELECT name FROM world
+ WHERE name LIKE '_t%'
+ORDER BY name
