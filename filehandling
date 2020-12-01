@@ -1,0 +1,17 @@
+count = 0
+count2 = 0
+with open("if.txt") as whole_file:
+    for line in whole_file:
+        if 'If' in line:
+            count = count + 1
+with open("if.txt") as writing_file:
+        line_to_write = "the word 'if' was used," +str(count) + "times"
+        write_file.write(line_to_write)
+
+with open("mam.txt") as whole_file2:
+    for line2 in whole_file2:
+        if 'If' in line2:
+            count2 = count2 + 1
+with open("mam.txt") as writing_file2:
+    line_to_write2 = "the word 'if' was used," +str(count) + "times"
+    write_file2.write(line_to_write)
