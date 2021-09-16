@@ -1,0 +1,38 @@
+from matplotlib.pyplot import ylabel, plot, show, xlabel, title
+import math
+x = [2, 4, 6, 8, 10, 12]
+y = []
+z = []
+a = []
+c = []
+for i in x:
+    y.append(math.log(i))
+
+for i in x:
+    z.append(i**2)
+
+for i in x:
+    a.append(2**i)
+
+for i in x:
+    c.append(math.factorial(i))
+plot(x, y, 'b')
+xlabel('Inputs')
+ylabel('Steps')
+title('Logarithm')
+show()
+plot(x, z, 'b')
+xlabel('Inputs')
+ylabel('Steps')
+title('Quadratic')
+show()
+plot(x, a, 'b')
+xlabel('Inputs')
+ylabel('Steps')
+title('Exponential')
+show()
+plot(x, c, 'b')
+xlabel('Inputs')
+ylabel('Steps')
+title('Factorial')
+show()
