@@ -1,0 +1,73 @@
+import random #random function used to generate random values for differen attributes 
+
+class Character: #creation of class
+    def __init__(self):
+        self.name = ""
+        self.attack = 0
+        self.defence = 0
+        self.__health = 0 #Demo private attribute
+        self.experience = 0
+
+    def print_basics(self):
+        print("\nName:       ",self.name)
+        print("attack:     ",self.attack)
+        print("defence     ",self.defence)
+        print("health:     ",self.__health)
+        print("experience: ",self.experience)
+
+    def setter(self,name):  #initializes the character class with random values
+        self.name = name
+        self.attack = random.randint(0,50)
+        self.defence = random.randint(0,50)
+        self.__health = random.randint(30,50)
+
+    def health_getter(self): #returns the health attribute outside of class
+        return self.__health
+
+    def print_me(self):
+        self.print_basics()
+
+
+class wizard(Character): # 1st child class & polymorphism between wizard & knight class
+    def __init__(self):
+        Character.__init__(self) #need to add in parent classes
+        self.magic = 30
+
+    def print_me(self):
+        self.print_basics()
+        print("magic       ",self.magic)
+
+class knight(Character): #2nd child class & polymorphism between wizard & knight class
+    def __init__(self):
+        Character.__init__(self) #need to add in parent classes
+        self.armour = 30
+
+    def print_me(self):
+        self.print_basics()
+        print("armour      ",self.armour) 
+
+Arthur = knight() #creates a knight
+Arthur.setter("Arthur")
+Arthur.print_me()
+
+Merlin = wizard() #creates a wizard
+Merlin.setter("Merlin")
+Merlin.print_me()
+
+caste = input("\nWould you like to be a Wizard or Knight? W or K") #allows creation of user character
+char_name = input("And what is your name?")
+
+if caste.upper() == "K": #creates knight
+    print("A great knight is created!")
+    you = knight()
+elif caste.upper() == "W": #creates wizard
+    print("A great wizards shimmers into existance")
+    you = wizard()
+else: #creates peasant
+    print("\nTyping W or K too much for you! \nClearly you plan to die...\nBasic peasant for you!")
+    you = Character()
+
+you.setter(char_name)
+you.print_me()
+
+print("\nThere's a game to be made here! \nBut the gods of youtube have not delivered me enough subscribers!")
